@@ -1,1 +1,8 @@
 /* Place any CSS here you want loaded in test.xhtml */
+body .ui-panel .ui-panel-content {
+    padding: 0;
+}
+
+body .ui-menu.ui-menubar {
+    padding: 0;
+}

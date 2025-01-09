@@ -8,12 +8,58 @@
     <h:head>
         <title>PrimeFaces Test</title>
         <h:outputScript name="test.js" />
+        <h:outputScript library="primefaces" name="jquery/jquery.js" />
+
         <h:outputStylesheet name="test.css" />
     </h:head>
     <h:body>
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
+
+            <h:outputLabel value="#{testView.jsfVersion}" /> <br />
+            <h:outputLabel value="#{testView.primeFacesVersion}" />
+
+            <p:panelGrid layout="grid">
+
+                <p:row>
+                    <p:panel id="outputPanel" style="width: 400px;"> </p:panel>
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <p:panel id="first" class="mouseOutTest">
+                            first
+                        </p:panel>
+                    </p:column>
+
+                    <p:column>
+                        <p:panel id="second" class="mouseOutTest">
+
+                            <p:menubar id="menubarButtonOperations" >
+                                <p:submenu
+                                        id="menuButtonOperations"
+                                        styleClass="a-dataTable-operationsMenu a-menu-operations"
+                                        icon="fa fa-ellipsis-v"
+                                        label="second"
+                                        title="submenu">
+                                        <p:menuitem value="menuItem1" />
+                                        <p:menuitem value = "menuItem2" />
+                                </p:submenu>
+                            </p:menubar>
+                        </p:panel>
+                    </p:column>
+
+                </p:row>
+
+
+            </p:panelGrid>
+
+
+
+
+
+
 
         </h:form>
 

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.math.BigDecimal;
 import jakarta.annotation.PostConstruct;
+import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import lombok.Data;
+import org.primefaces.PrimeFaces;
 
 @Data
 @Named
@@ -33,5 +35,18 @@ public class TestView implements Serializable {
                 new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)
         ));
     }
+
+
+    public String getPrimeFacesVersion() {
+        Package pf = PrimeFaces.class.getPackage();
+        return pf.getImplementationTitle() + " / " + pf.getImplementationVersion();
+    }
+
+    public String getJsfVersion() {
+        Package jsf = FacesContext.class.getPackage();
+        return jsf.getImplementationVendor() + " / " + jsf.getImplementationTitle() + " / "
+                + jsf.getImplementationVersion();
+    }
+
 
 }
